@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
+html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, pre {
+    margin: 0;
+    padding: 0;
+}
+html, body { min-height: 100%; }
+
+body {
+    background-color: #345;
+    background-image: linear-gradient(to bottom, #0009, transparent);
+    color: #eee;
+    font-family: 'Lato', sans-serif;
+    font-size: 62.5%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+code {
+    background: #fff1;
+    font-family: 'Inconsolata', monospace;
+    padding: .2em .4em;
+}
+
+/* Appearance */
+.links {
+    background-color: #123;
+    background-image: linear-gradient(to bottom, #0003, transparent);
+    border-bottom: 1px solid #0003;
+    box-shadow: 0 0 32px #0003;
+    font-size: 2em;
+    font-weight: 300;
+}
+.links > a {
+    color: #9ab;
+    padding: .75em;
+    text-align: center;
+    text-decoration: none;
+    transition: all .5s;
+}
+.links > a:hover {
+    background: #ffffff06;
+    color: #adf;
+}
+.links > .line {
+    background: #68a;
+    height: 1px;
+    pointer-events: none;
+}
+
+/* The Magic */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.links {
+    display: grid;
+    grid-template-columns: repeat(var(--items), 1fr);
+    position: relative;
+}
+.links > .line {
+    opacity: 0;
+    transition: all .5s;
+    position: absolute;
+    bottom: 0;
+    left: var(/*--left,*/calc(100% / var(--items) * (var(--index) - 1)));
+    width: var(/*--width, */calc(100% / var(--items)));
+    --index: 0;
+}
+.links > a:hover ~ .line {
+    opacity: 1;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+th {
+    text-align: left;
+}
+
+thead th {
+    background-color: #55608f;
+}
+tbody tr :hover {
+    background-color: rgba(255,255,255,0.3);
+}
+tbody td {
+    position: relative;
+}
+tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255,255,255,0.2);
+    z-index: -1;
+}
+
+.links > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.links > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.links > a:nth-of-type(3):hover ~ .line { --index: 3; }
+.links > a:nth-of-type(4):hover ~ .line { --index: 4; }
+.links > a:nth-of-type(5):hover ~ .line { --index: 5; }
+.links > a:nth-of-type(6):hover ~ .line { --index: 6; }
+.links > a:nth-of-type(7):hover ~ .line { --index: 7; }
+.links > a:nth-of-type(8):hover ~ .line { --index: 8; }
+.links > a:nth-of-type(9):hover ~ .line { --index: 9; }
+.links > a:nth-of-type(10):hover ~ .line { --index: 10; }
+.links > a:last-of-type:hover ~ .line { --index: var(--items); }
+
+<!-- create -->
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.signupSection {
+    background: url(https://source.unsplash.com/TV2gg2kZD1o/1600x800);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+
+.signupForm {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+}
+
+.signupForm h2 {
+    font-weight: 300;
+}
+.inputFields {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+}
+
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+
+#join-btn {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#join-btn:hover {
+    background: rgba(20, 20, 20, .8);
+    padding: 10px 80px;
+}
+
+
+ #button {
+        line-height: 1;
+        display: inline-block;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 8px;
+        /*background-color: darken(#54a1a0,5%);*/
+    }
+#select {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2C3845
+}
+
+#select:before {
+    display: none;
+}
+
